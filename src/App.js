@@ -1,25 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import React,{useState} from 'react';
+import Greet from './Components/Greet'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const[id, setId]=useState("banil");
+return (
+    <div>
+      <h3>Probs in js</h3>
+      
+      <Greet fog={id} />
+       <button onClick = {() => {setId("Sarath")}}>update</button>
+    
     </div>
   );
+
 }
 
 export default App;
