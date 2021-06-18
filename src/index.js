@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Form from './Components/Form';
-import App from './App';
+import Todo from './Components/Todo';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Form />
-    <App />
+    
+    <Todo />
   </React.StrictMode>,
   document.getElementById('root')
 );
