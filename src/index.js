@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Todo from './Components/Todo';
+import TodoApp from './Components/TodoApp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    
-    <Todo />
+  <TodoApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
