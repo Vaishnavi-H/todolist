@@ -9,6 +9,8 @@ body{
  
 }
 .ui{
+  
+
    font-size: 15px;
    width:500px;
    padding: 10px;
@@ -18,9 +20,13 @@ body{
    border-bottom: none;
  
 }
+.uidate{
+    height:100px;
+    width:100px;
+}
 .ui:nth-child(4n+1){
     background-color: rgba(136, 131, 218, 0.856);
-    background-image: url"{img1}";
+    
      
 }   
 .ui:nth-child(4n+2){
@@ -33,10 +39,30 @@ body{
     background-color: rgb(216, 216, 112);
 }
 
-.container{
-    padding-top: 30px;
+.vi{
     
+    font-size: 15px;
+   width:500px;
+   padding: 10px;
+   padding-left: 5px;
+   padding-bottom: 20px;
+   border: 1px solid rgb(161, 161, 161);
+   border-bottom: none;
     
+}
+.vi:nth-child(4n+1){
+    background-color: rgba(136, 131, 218, 0.856);
+    
+     
+}   
+.vi:nth-child(4n+2){
+    background-color: rgb(167, 163, 163);
+}
+.vi:nth-child(4n+3){
+  background-color: rgb(124, 209, 124);
+}
+.vi:nth-child(4n+4){
+    background-color: rgb(216, 216, 112);
 }
 button{
     border-radius:50%;
@@ -101,4 +127,7 @@ form{
     font-size: 12px;
     
     
+}
+li{
+    display:block;
 }
