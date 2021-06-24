@@ -18,8 +18,10 @@ body{
    padding-bottom: 20px;
    border: 1px solid rgb(161, 161, 161);
    border-bottom: none;
+  
+  };
  
-}
+
 .uidate{
     height:100px;
     width:100px;
@@ -27,6 +29,7 @@ body{
 .ui:nth-child(4n+1){
     background-color: rgba(136, 131, 218, 0.856);
     
+   
      
 }   
 .ui:nth-child(4n+2){
@@ -71,7 +74,7 @@ button{
     outline: 0;
     border:0 ;
     color:white;
-    background: rgb(192, 188, 188);
+    background: rgb(173, 122, 122);
     width:19px;
     height: 19px;
     float: right;
@@ -130,4 +133,9 @@ form{
 }
 li{
     display:block;
+}
+img{
+    width:30px;
+    height: 20px;
+ 
 }

@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Todo.css';
 import useLocalStorage from './useLocalStorage';
-import img1 from './profile.jpg';
+
 
 function TodoApp(){
     const[task,setTask] = useLocalStorage("task",[]);
-    const [tasklist, setTaskList] = useLocalStorage("tasklist",[]);
-    const time =Date().toString();
-    const[date,setDate]=useLocalStorage("date",[]);
-    const[datelist,setDateList]=useLocalStorage("",[]);
+    const [tasklist,setTaskList] = useLocalStorage("tasklist",[]);
+    
+    var tempDate = new Date();
+    var date = tempDate.getFullYear() + '-' + (tempDate.getMonth()+1) + '-' + tempDate.getDate() +' '+ tempDate.getHours()+':'+ tempDate.getMinutes()+':'+ tempDate.getSeconds();
+    const currDate = "Date: "+date;
+    
+  
+    
+
+  
+
+    
+
+  //  const[date,setDate]=useLocalStorage("date",[]);
+ //   const[datelist,setDateList]=useLocalStorage("datelist",[]);
     //const initialFormData = Object.freeze({
       // text : "",
        // date: ""
@@ -26,46 +37,48 @@ function TodoApp(){
    // }
 
 
+
    const TexthandleChange = (e)=>{
        setTask(e.target.value);
    };
-   const DatehandleChange =(e)=>{
-       setDate(e.target.value);
-   };
-   
+   //const DatehandleChange =(e)=>{
+ //      setDate(e.target.value);
+  // };
+ 
       const AddTask =() => {
+       
+        
         if(task  !== ""){
             const taskDetails={
                 id: Math.floor(Math.random()*1000),
                 value: task,
-                
-         };
-        
-    
-        setTaskList([...tasklist, taskDetails]);
+                date:currDate,
+              
+             
+            };
+            
+         setTaskList([...tasklist, taskDetails]);
         }
     };
 
-    const AddDate =() => {
-        if(task  !== ""){
-            const dateDetails={
-               
-               
-                value: date,
-         };
-        
-    
-        setDateList([...datelist, dateDetails]);
-        }
-    };
+    //const AddDate =() => {
+    //    if(date  !== ""){
+        //    const dateDetails={
+      //          id: Math.floor(Math.random()*1000),
+         //      date: date,
+     //    };
+     //   setDateList([...datelist, dateDetails]);
+   // };
 
-
-    
-
+//const removeId = (e, id )=>{
+    //    e.preventDefault();
+     //   setTaskList(datelist.filter((a) => a.id !== id));
+//};
  const removeTask = (e, id )=>{
-        e.preventDefault();
-        setTaskList(tasklist.filter((t) => t.id !== id));
-};
+      e.preventDefault();
+       setTaskList(tasklist.filter((t) => t.id !== id));
+ };
+ 
 
 
 return(
@@ -73,12 +86,10 @@ return(
         <h3>Todolist</h3>
         <div>
              {tasklist.map((t) => (
-             <li class="ui"> {t.value}
+             <li class="ui"> {t.value}.....{t.date}...
                <button onClick={(e)=> removeTask(e, t.id)}><i class="fa fa-close"></i></button>
              </li>))}
-             {datelist.map((a) => (<li class="vi">{a.value}<button onClick={(e)=> removeTask(e, a.id)}><i class="fa fa-close"></i></button></li> 
-                   ))}
-                  
+         
                   </div>  
                  
            
@@ -86,9 +97,8 @@ return(
        
         
         
-        <form >
+        <form>
         <input type="text" placeholder="Enter Item" id="text" name="text" onChange={(e) => TexthandleChange(e)} />
-        <input type="date" name="date" onChange={(e) => DatehandleChange(e)}/>
         
         <button class="btn" type="submit" onClick={AddTask} >Submit</button>
         

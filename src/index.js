@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import TodoApp from './Components/TodoApp';
+import Hook from './Components/Hook';
+import Axios from './Components/Axios';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-  <TodoApp />
+  <Hook/>
+  <Axios></Axios>
   </React.StrictMode>,
   document.getElementById('root')
 );
